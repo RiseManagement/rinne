@@ -4,6 +4,8 @@
  * Unity 2020.3.34f1
 
 # Material
+* [企画書](https://docs.google.com/presentation/d/1IFTPT2YHamDWDYfD1tNbblcbIudAJ7Zr/edit?usp=sharing&ouid=106836067925261209793&rtpof=true&sd=true)
+* [仕様書](https://docs.google.com/spreadsheets/d/1cc_wDwyH43E8je1hdQSjgAQaHzxmORuub4b_zUWonIU/edit?usp=sharing)
 * [miro](https://miro.com/app/board/uXjVOOD7R2w=/)
 
 <!-- # Architecture
