@@ -5,6 +5,7 @@
 
 # Material
 * [企画書](https://docs.google.com/presentation/d/1IFTPT2YHamDWDYfD1tNbblcbIudAJ7Zr/edit?usp=sharing&ouid=106836067925261209793&rtpof=true&sd=true)
+* [開発計画書](https://docs.google.com/spreadsheets/d/1b4aCe6ztWkOAjyYm6DVATlO4xF5zSuh7G-2RilK0YV4/edit?usp=sharing)
 * [仕様書](https://docs.google.com/spreadsheets/d/1cc_wDwyH43E8je1hdQSjgAQaHzxmORuub4b_zUWonIU/edit?usp=sharing)
 * [miro](https://miro.com/app/board/uXjVOOD7R2w=/)
 
