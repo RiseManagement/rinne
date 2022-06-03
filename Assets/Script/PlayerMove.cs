@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,13 +23,13 @@ public class PlayerMove : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		// “ü—Í‚ğx‚É‘ã“ü
+		// å…¥åŠ›ã‚’xã«ä»£å…¥
 		float x = Input.GetAxis("Horizontal");
 
-		//x²‚É‰Á‚í‚é—Í‚ğŠi”[
+		//xè»¸ã«åŠ ã‚ã‚‹åŠ›ã‚’æ ¼ç´
 		force = new Vector2(x * speed, 0);
 
-		//Rigidbody‚É—Í‚ğ‰Á‚¦‚é
+		//Rigidbodyã«åŠ›ã‚’åŠ ãˆã‚‹
 		rb.AddForce(force);
 	}
 }
