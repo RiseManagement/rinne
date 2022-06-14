@@ -18,6 +18,9 @@ public class CharacterController2D : MonoBehaviour
     [SerializeField, Tooltip("Max height the character will jump regardless of gravity")]
     float jumpHeight = 4;
 
+	[SerializeField]
+	float dashSpeed;
+
     private BoxCollider2D boxCollider;
 
     private Vector2 velocity;
@@ -38,6 +41,7 @@ public class CharacterController2D : MonoBehaviour
         // Use GetAxisRaw to ensure our input is either 0, 1 or -1.
         float moveInput = Input.GetAxisRaw("Horizontal");
 
+		//地面についている状態
         if (grounded)
         {
             velocity.y = 0;
@@ -51,10 +55,19 @@ public class CharacterController2D : MonoBehaviour
 
         float acceleration = grounded ? walkAcceleration : airAcceleration;
         float deceleration = grounded ? groundDeceleration : 0;
+		
+		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+		{
+			dashSpeed = 3f;
+		}
+		else
+		{
+			dashSpeed = 1;
+		}
 
         if (moveInput != 0)
         {
-            velocity.x = Mathf.MoveTowards(velocity.x, speed * moveInput, acceleration * Time.deltaTime);
+            velocity.x = Mathf.MoveTowards(velocity.x, speed * dashSpeed * moveInput, acceleration * Time.deltaTime);
         }
         else
         {
@@ -70,6 +83,7 @@ public class CharacterController2D : MonoBehaviour
         // Retrieve all colliders we have intersected after velocity has been applied.
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, boxCollider.size, 0);
 
+		//当たり判定？
         foreach (Collider2D hit in hits)
         {
             // Ignore our own collider.
