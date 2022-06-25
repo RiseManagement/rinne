@@ -38,7 +38,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-        // Use GetAxisRaw to ensure our input is either 0, 1 or -1.
+        // GetAxisRawを使用。入力が 0, 1, -1 のいずれかになる
         float moveInput = Input.GetAxisRaw("Horizontal");
 
 		//地面についている状態
@@ -48,7 +48,7 @@ public class CharacterController2D : MonoBehaviour
 
             if (Input.GetButtonDown("Jump"))
             {
-                // Calculate the velocity required to achieve the target jump height.
+                // 目標とするジャンプの高さを達成するために必要な速度を計算する。
                 velocity.y = Mathf.Sqrt(2 * jumpHeight * Mathf.Abs(Physics2D.gravity.y));
             }
         }
@@ -80,26 +80,26 @@ public class CharacterController2D : MonoBehaviour
 
         grounded = false;
 
-        // Retrieve all colliders we have intersected after velocity has been applied.
+        // 速度が適用された後、接触したすべてのコライダーを取得する。
         Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, boxCollider.size, 0);
 
 		//当たり判定？
         foreach (Collider2D hit in hits)
         {
-            // Ignore our own collider.
+            // コライダを無視
             if (hit == boxCollider)
                 continue;
 
             ColliderDistance2D colliderDistance = hit.Distance(boxCollider);
 
-            // Ensure that we are still overlapping this collider.
-            // The overlap may no longer exist due to another intersected collider
-            // pushing us out of this one.
+            // コライダがまだ重なっているかを確認する。
+            // 他のコライダが接触しているため、オーバーラップが存在しない場合がある。
+            // 移動させ重なりを解消する。
             if (colliderDistance.isOverlapped)
             {
                 transform.Translate(colliderDistance.pointA - colliderDistance.pointB);
 
-                // If we intersect an object beneath us, set grounded to true. 
+                // 下にあるオブジェクトと接触したら、groundedをtrueにする。 
                 if (Vector2.Angle(colliderDistance.normal, Vector2.up) < 90 && velocity.y < 0)
                 {
                     grounded = true;
