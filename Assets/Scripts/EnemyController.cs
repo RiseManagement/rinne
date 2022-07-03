@@ -77,19 +77,15 @@ public class EnemyController : MonoBehaviour
 					grounded = true;
 				}
 			}
-
-			
-			if (hit.gameObject.tag.Equals("Wall"))
-			{
-				//movedir *= 1;
-			}
 		}
 
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-				Debug.Log("壁に当たった");
-		
+		if(collision.gameObject.tag == "Wall")
+		{
+			movedir *= -1;
+		}
 	}
 }
