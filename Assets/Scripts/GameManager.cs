@@ -23,6 +23,13 @@ public class GameManager : MonoBehaviour
         gameOverCanvas.gameObject.SetActive(false);
     }
 
+    public void Death()
+    {
+        // 残機1減らす。
+        // プレイヤーキャラ消す。
+        // なんか押されたら GameStart()
+    }
+
     public void GameOver()
     {
         gameOverCanvas.gameObject.SetActive(true);
