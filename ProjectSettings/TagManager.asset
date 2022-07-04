@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Enemy
   - Wall
-  - Hole
   layers:
   - Default
   - TransparentFX
