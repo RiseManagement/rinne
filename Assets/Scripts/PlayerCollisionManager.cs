@@ -6,6 +6,12 @@ public class PlayerCollisionManager : MonoBehaviour
 {
     [SerializeField]
     GameManager gameManager = null;
+
+	/// <summary>
+	/// プレイヤーが地面に落ちているかフラグ
+	/// </summary>
+	public bool playerfalllag = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +30,8 @@ public class PlayerCollisionManager : MonoBehaviour
         {
             Debug.Log("Hole");
             gameManager.GameOver();
-        }
+			playerfalllag = true;
+
+		}
     }
 }

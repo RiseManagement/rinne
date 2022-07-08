@@ -9,7 +9,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float dashSpeed;
     [SerializeField]
-    float jumpForce = 4;
+    float jumpForce = 1000;
+
+	public float JumpForce
+	{
+		set
+		{
+			jumpForce = value;
+		}
+
+		get
+		{
+			return jumpForce;
+		}
+	}
 
     private Rigidbody2D rb;
     public LayerMask groundLayer;
