@@ -25,5 +25,10 @@ public class PlayerCollisionManager : MonoBehaviour
             Debug.Log("Hole");
             gameManager.GameOver();
         }
-    }
+
+		if (other.gameObject.CompareTag("Goal"))
+		{
+			gameManager.PlayerGoal();
+		}
+	}
 }

@@ -34,4 +34,12 @@ public class GameManager : MonoBehaviour
     {
         gameOverCanvas.gameObject.SetActive(true);
     }
+
+	/// <summary>
+	/// プレイヤーとゴールとの判定後の処理
+	/// </summary>
+	public void PlayerGoal()
+	{
+		Debug.Log("ゴール");
+	}
 }
