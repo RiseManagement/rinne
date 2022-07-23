@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerCollisionManager : MonoBehaviour
 {
+	Spawn spawnSc;
     [SerializeField]
     GameManager gameManager = null;
     // Start is called before the first frame update
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-    }
+		spawnSc = GameObject.Find("GameManager").GetComponent<Spawn>();
+	}
 
     // Update is called once per frame
     void Update()
@@ -24,6 +26,7 @@ public class PlayerCollisionManager : MonoBehaviour
         {
             Debug.Log("Hole");
             gameManager.GameOver();
-        }
+			spawnSc.playerSpawn();
+		}
     }
 }
